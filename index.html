@@ -1,0 +1,435 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+  <!------Google font link------------!-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+  <!-------CSS page link!-->
+  <link href="home.css" rel="stylesheet" type="text/css" />
+
+  <style>
+    body{
+        background:white;
+        color:black;   
+    }
+    body.mydark{
+        background:black;
+        color:white !important;
+
+    }
+    .mydark .card-body
+    {
+      color:red !important;
+    }
+</style>
+
+
+  <!----Fontawesome icon link-------->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <title>My School Website</title>
+</head>
+
+
+<body>
+  <div class="container abc">
+    <div id="main"> </div>
+    <div id="coupon">
+      <button onClick="closeCoupon()">&times;</button>
+      <script> window.onload = loadCoupon()
+      </script>
+      <div class="coupon-card">
+        <img src="schoollogo.jpg" class="logo">
+        <h3>20% off on all books
+          <br>during admission in 2023
+        </h3>
+        <div class="coupon-row">
+          <span id="cpnCode">STEALDEAL20</span>
+          <span id="cpnBtn">COPY CODE</span>
+
+        </div>
+        <p>Valid till:12 Feb 2023</p>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var cpnBtn = document.getElementById("cpnBtn");
+    var cpnCode = document.getElementById("cpnCode");
+
+    cpnBtn.onclick = function () {
+      navigator.clipboard.writeText(cpnCode.innerHTML);
+      cpnBtn.innerHTML = "COPIED";
+      setTimeout(function () {
+        cpnBtn.innerHTML = "COPY CODE";
+
+      }, 3000);
+    }
+
+  </script>
+  
+  <header role="navigation" class="navbar">
+   
+    <label onclick="changeMode()"></label>
+
+    <div class="head_div">
+      Our Social Networks
+    </div>
+    <div class="wrapper">
+      <div class="icon facebook">
+        <div class="tooltip">Facebook</div>
+        <span><i class="fab fa-facebook-f"></i></span>
+      </div>
+
+      <div class="icon instagram">
+        <div class="tooltip">Instagram</div>
+        <span><i class="fab fa-instagram"></i></span>
+      </div>
+
+      <div class="icon twitter">
+        <div class="tooltip twitter">Twitter</div>
+        <span><i class="fab fa-twitter"></i></span>
+      </div>
+
+      <div class="icon github">
+        <div class="tooltip">Github</div>
+        <span><i class="fab fa-github"></i> </span>
+      </div>
+
+    </div>
+  </header>
+
+  <!----Navbar start!--->
+  <!-- <nav class=" navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#"> School </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-3">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="#">Courses</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="#">Gallery</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul> -->
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Login</a>
+            </li>
+          </ul>
+        </div> -->
+      <!-- </div>
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">School</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="#">Courses</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="#">Gallery</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+          </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!----Carousel start-------->
+  <div class="carousal_main">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://cdn.pixabay.com/photo/2019/07/29/04/35/student-4369850__480.jpg"
+            alt="Image is not available" width="100%" height="100%">
+          <div class="carousel-caption d-block">
+            <h5><span>Pratibha Secondary</span> School</h5>
+            <p>Life is always what you made it! somewhere somehow you are the responsible for that</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://cdn.pixabay.com/photo/2021/10/06/05/17/learn-6684425_1280.jpg" alt="..." width="100%"
+            height="100%">
+          <div class="carousel-caption d-block">
+            <h5><span>Pratibha Secondary</span> School</h5>
+            <p>Wherever you are stand today it will build your tomorrow </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://cdn.pixabay.com/photo/2020/12/24/19/21/laptop-5858081_1280.jpg" alt="..." width="100%"
+            height="100%">
+          <div class="carousel-caption d-block">
+            <h5><span>Pratibha Secondary</span> School</h5>
+            <p>Childrens don't choose the school they just go whichever their parents chose</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <!----About Us page work------->
+  <main class="id">
+    <div class="about mt-5">
+      <div class="container-fluid">
+        <h5 class="h5-responsive fw-bold text-center my-2">About</h5>
+
+        <p class="text-center w-responsive mx-auto mb-1">We helps the
+          students to decode the value of caring, sharing and understanding.
+          This system makes the Pratibha school really special.</p>
+        <div class="row pt-5">
+          <div class="col-md-6 align-items-stretch">
+            <img class="img-fluid" src="https://cdn.pixabay.com/photo/2013/01/20/04/53/college-75535_1280.jpg"
+              alt="Image is uploading....">
+          </div>
+          <div class="col-md-6">
+            <h5 class="h5-responsive fw-bold text-center section-heading"> Our school</h5>
+            <p>Pratibha schools follow the national curriculum, adapted and
+              adjusted as necessary to meet the needs of the children. A good
+              many have in-house care from a range of therapists, which may include
+              a speech and language therapist (SaLT), an occupational therapist and
+              a physiotherapist,or will have a NHS therapist assigned to the school.</p>
+
+            <p>Pratibha Secondary School, established in the year 2003, is a premier
+              school under the aegis of the National Society, New Delhi.
+              Affiliated to the Central Board of Secondary Education (CBSE), the institution
+              has an educational policy that is dynamic in approach and in accordance with
+              the changing needs of the society. The school aims at providing a conducive
+              environment to stimulate intellectual growth of each child.</p>
+            <div class="col-xxl-12 text right my-5 ">
+              <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="right"
+                data-bs-title=" Who am I ">
+                Read more</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!----Courses Section------------>
+  <main id="courses">
+    <div>
+      <div class="container">
+        <h5 class="h5-responsive fw-bold text-center my-4">Courses</h5>
+
+        <p class="text-center w-responsive mx-auto mb-1">We don't impose the burden of any
+          course on any children ,We always decide the best course as per your children wish to do.</p>
+      </div>
+      <!---------Card tittle------->
+      <div class="row d-flex justify-content-center mt-5 ">
+        <div class="card mb-3" style="max-width: 340px; padding: 0px ;">
+          <div class="row g-0">
+            <div class="col-md-12">
+              <img src="https://cdn.pixabay.com/photo/2015/01/08/18/24/children-593313_1280.jpg" alt="srvices images"
+                class="img-fluid image">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h2 class="card-title">Science</h2>
+                <p class="card-text">Science and Technology encompasses the systematic study
+                  of the structure and behaviour of the physical and natural world through
+                  observation and experiment, and technology is the application of scientific
+                  knowledge for practical purposes.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" style="max-width: 340px; padding: 0px;">
+          <div class="row g-0">
+            <div class="col-md-12">
+              <img src="https://cdn.pixabay.com/photo/2016/06/09/02/42/crayons-1445053_1280.jpg" alt="srvices images"
+                class="img-fluid image">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h2 class="card-title">Arts</h2>
+                <p class="card-text">The arts are also referred to as bringing together all creative
+                  and imaginative activities, without including science.They encompass multiple diverse
+                  and plural modes of thinking, doing and being, in an extremely broad range of media.
+                  Art imitates life.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" style="max-width: 340px; padding: 0px;">
+          <div class="row g-0">
+            <div class="col-md-12">
+              <img src="https://cdn.pixabay.com/photo/2015/05/10/21/28/accounting-761599__480.jpg" alt="srvices images"
+                class="img-fluid image">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h2 class="card-title">Accountancy</h2>
+                <p class="card-text">Accountancy is the practice of recording, classifying, and reporting
+                  on business transactions for a business. It provides feedback to management regarding the financial
+                  results and status of an organization.Financial statements need to be transparent, reliable.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Option 1: Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+  <footer class="container-fluid p-0">
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+    <footer class="text-white text-center text-lg-start bg-dark">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row mt-4">
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">About school</h5>
+
+            <p>
+              Well, Pratibha schools are the most reputed schools in the whole world.
+              They have a better syllabus as compared to all the schools and are an
+              emphasis on the student’s grades.
+            </p>
+
+            <p>
+              Pratibha school stimulates all the students to participate in extra-curricular
+              activities and various other functions and workshops.
+            </p>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
+
+            <div class="form-outline form-white mb-4">
+              <input type="text" id="formControlLg" class="form-control form-control-lg" />
+              <!-- <label class="form-label" for="formControlLg">Search</label> -->
+            </div>
+
+            <ul class="fa-ul" style="margin-left: 1.65em;">
+              <li class="mb-3">
+                <span class="fa-li"><i class="fas fa-home"></i></span>
+                <span class="ms-2">M-block ,Sec-23 Sanjay Nagar, Ghaziabad 201002</span>
+              </li>
+              <li class="mb-3">
+                <span class="fa-li"><i class="fas fa-envelope"></i></span>
+                <span class="ms-2">sachin.dagar97@yahoo.com</span>
+              </li>
+              <li class="mb-3">
+                <span class="fa-li"><i class="fas fa-phone"></i></span>
+                <span class="ms-2">+ 0120-2683378</span>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+            <table class="table text-center text-white">
+              <tbody class="fw-normal">
+                <tr>
+                  <td>Mon - Sat:</td>
+                  <td>8am - 2pm</td>
+                </tr>
+                <tr>
+                  <td>Sat:</td>
+                  <td>8am - 12pm</td>
+                </tr>
+                <tr>
+                  <td>Sunday:</td>
+                  <td>off</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">pratibhaschooling.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    </div>
+    <!-- End of .container -->
+  </footer>
+
+<script src="script.js"></script>
+</body>
+
+</html>
